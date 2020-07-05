@@ -13,8 +13,9 @@ class Launch {
     var missionName = "Mission Name"
     var launchYear = "1999"
     var vehicleBlock = 99
-    var launchDateUnix = 0000000000
+    var launchDateUnix = 0000000000.0
     var launchDateLocal = "July 04"
+    var launchTime = "12:12pm"
     var rocketType = "Eagle 10"
     var serial = "12345"
     var previousFlights = -1
@@ -23,6 +24,8 @@ class Launch {
     var landingType = "ADD"
     var landingVehicle = "Ground"
     var payloadArray:[Payload]
+    var timeZone = "EST"
+    var padName = "KSC"
     
     
     var siteName = "VAB"
@@ -31,7 +34,7 @@ class Launch {
     var link = "http"
     var upcoming = false
     
-    init(flightNumber: Int, missionName: String, launchYear: String, vehicleBlock: Int, launchDateUnix: Int, launchDateLocal: String, rocketType: String, serial: String, previousFlights: Int, reused: Bool, landingIntent: Bool, landingType: String, landingVehicle: String, payloadArray: [Payload], siteName: String, siteNameLong: String, missionDetails: String, link: String, upcoming: Bool) {
+    init(flightNumber: Int, missionName: String, launchYear: String, vehicleBlock: Int, launchDateUnix: Double, launchDateLocal: String, rocketType: String, serial: String, previousFlights: Int, reused: Bool, landingIntent: Bool, landingType: String, landingVehicle: String, payloadArray: [Payload], siteName: String, siteNameLong: String, missionDetails: String, link: String, upcoming: Bool, launchTime: String, timeZone: String, padName: String) {
         self.flightNumber = flightNumber
         self.missionName = missionName
         self.launchYear = launchYear
@@ -51,6 +54,9 @@ class Launch {
         self.link = link
         self.upcoming = upcoming
         self.missionDetails = missionDetails
+        self.launchTime = launchTime
+        self.timeZone = timeZone
+        self.padName = padName
     }
     
     
