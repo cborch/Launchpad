@@ -258,6 +258,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8zN-Ut-f6N"/>
                     <connections>
+                        <outlet property="countDownLabel" destination="7Qq-gf-AX4" id="7eK-52-t4P"/>
                         <outlet property="tableView" destination="STp-Gl-mJ0" id="nrR-o6-H9z"/>
                     </connections>
                 </viewController>

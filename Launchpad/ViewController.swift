@@ -12,7 +12,11 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var countDownLabel: UILabel!
+    var timer = Timer()
+    var isTimerRunning = false
+    var timeToLaunch = 86400.0
+    let currentUnixTime = NSDate().timeIntervalSince1970
     
 
     var launches = Launches()
@@ -25,14 +29,36 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         loadLaunches()
+        print(timeToLaunch)
+        runTimer()
         
+    }
+    
+    func runTimer() {
+         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        timeToLaunch -= 1     //This will decrement(count down)the seconds.
+        countDownLabel.text = timeString(time: TimeInterval(timeToLaunch)) //This will update the label.
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        let days = Int(time) / 86400
+        let hours = Int(time) % 86400 / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i:%02i", days, hours, minutes, seconds)
     }
     
     func loadLaunches() {
         launches.getLaunches() {
             print("Done")
             self.tableView.reloadData()
+            print(self.launches.launchArray)
+            self.timeToLaunch = self.launches.launchArray[0].launchDateUnix - self.currentUnixTime
         }
+        
         
     }
     
