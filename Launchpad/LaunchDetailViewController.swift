@@ -40,6 +40,12 @@ class LaunchDetailViewController: UIViewController {
     @IBOutlet weak var landingUIView: UIView!
     @IBOutlet weak var detailsUIView: UIView!
     
+    @IBOutlet weak var customerAndPayloadLabel: UILabel!
+    @IBOutlet weak var countryAndTotalMassLabel: UILabel!
+    @IBOutlet weak var massHeaderLabel: UILabel!
+    @IBOutlet weak var orbitHeaderLabel: UILabel!
+    
+    
     
     
     var launch: Launch!
@@ -91,6 +97,28 @@ class LaunchDetailViewController: UIViewController {
         flightNumberDetailLabel.text = "\(launch.flightNumber)"
         
         
+        if launch.payloadArray.count == 1 {
+            customerLabel.text = launch.payloadArray[0].customer
+            countryLabel.text = launch.payloadArray[0].nationality
+            massLabel.text = "\(launch.payloadArray[0].mass)"
+            orbitLabel.text = "\(launch.payloadArray[0].orbit)"
+        } else {
+            let payloadCount = launch.payloadArray.count
+            var totalMass: Float = 0.0
+            for i in 0..<payloadCount {
+                totalMass += launch.payloadArray[i].mass
+            }
+            customerAndPayloadLabel.text = "Number"
+            payloadLabel.text = "Multiple"
+            customerLabel.text = "\(payloadCount)"
+            countryAndTotalMassLabel.text = "Total Mass"
+            countryLabel.text = "\(totalMass)"
+            massHeaderLabel.isHidden = true
+            orbitHeaderLabel.isHidden = true
+            massLabel.isHidden = true
+            orbitLabel.isHidden = true
+        }
+        
         //successLabel.text = launch.success
         
         // Need to deal with attributes inside the payload array so it can handle multiple
@@ -100,13 +128,13 @@ class LaunchDetailViewController: UIViewController {
     }
     
     func configureUIViews() {
-        countdownUIView.layer.cornerRadius = 15
-        vehicleUIView.layer.cornerRadius = 15
-        payloadUIView.layer.cornerRadius = 15
-        launchUIView.layer.cornerRadius = 15
-        landingUIView.layer.cornerRadius = 15
-        landingUIView.layer.cornerRadius = 15
-        detailsUIView.layer.cornerRadius = 15
+        countdownUIView.layer.cornerRadius = 10
+        vehicleUIView.layer.cornerRadius = 10
+        payloadUIView.layer.cornerRadius = 10
+        launchUIView.layer.cornerRadius = 10
+        landingUIView.layer.cornerRadius = 10
+        landingUIView.layer.cornerRadius = 10
+        detailsUIView.layer.cornerRadius = 10
     }
     
 

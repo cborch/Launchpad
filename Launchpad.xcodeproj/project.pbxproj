@@ -12,6 +12,7 @@
 		C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3924B168F2009E57E0 /* Payload.swift */; };
 		C5508E3C24B1F59E009E57E0 /* Launches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3B24B1F59E009E57E0 /* Launches.swift */; };
 		C5508E3E24B22053009E57E0 /* LaunchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3D24B22053009E57E0 /* LaunchDetailViewController.swift */; };
+		C5508E4024B26FDE009E57E0 /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3F24B26FDE009E57E0 /* VehicleDetailViewController.swift */; };
 		C563B89424B126CB009293A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B89324B126CB009293A4 /* AppDelegate.swift */; };
 		C563B89624B126CB009293A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B89524B126CB009293A4 /* SceneDelegate.swift */; };
 		C563B89824B126CB009293A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B89724B126CB009293A4 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		C5508E3924B168F2009E57E0 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		C5508E3B24B1F59E009E57E0 /* Launches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launches.swift; sourceTree = "<group>"; };
 		C5508E3D24B22053009E57E0 /* LaunchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailViewController.swift; sourceTree = "<group>"; };
+		C5508E3F24B26FDE009E57E0 /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
 		C563B89024B126CB009293A4 /* Launchpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Launchpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563B89324B126CB009293A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C563B89524B126CB009293A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				C5508E3924B168F2009E57E0 /* Payload.swift */,
 				C5508E3D24B22053009E57E0 /* LaunchDetailViewController.swift */,
 				C563B89924B126CB009293A4 /* Main.storyboard */,
+				C5508E3F24B26FDE009E57E0 /* VehicleDetailViewController.swift */,
 				C563B89C24B126CD009293A4 /* Assets.xcassets */,
 				C563B89E24B126CD009293A4 /* LaunchScreen.storyboard */,
 				C563B8A124B126CD009293A4 /* Info.plist */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5508E4024B26FDE009E57E0 /* VehicleDetailViewController.swift in Sources */,
 				C5508E3E24B22053009E57E0 /* LaunchDetailViewController.swift in Sources */,
 				C5508E3C24B1F59E009E57E0 /* Launches.swift in Sources */,
 				C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */,
@@ -376,6 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NSTS32W8H5;
 				INFOPLIST_FILE = Launchpad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NSTS32W8H5;
 				INFOPLIST_FILE = Launchpad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
