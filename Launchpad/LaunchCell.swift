@@ -50,11 +50,11 @@ class LaunchCell: UITableViewCell {
     }
     
     func configureUIViews() {
-        largeUIView.layer.cornerRadius = 10
-        smallUIView1.layer.cornerRadius = 10
-        smallUIView2.layer.cornerRadius = 10
-        smallUIView3.layer.cornerRadius = 10
-        smallUIView4.layer.cornerRadius = 10
+        largeUIView.layer.cornerRadius = 15
+        smallUIView1.layer.cornerRadius = 15
+        smallUIView2.layer.cornerRadius = 15
+        smallUIView3.layer.cornerRadius = 15
+        smallUIView4.layer.cornerRadius = 15
     }
     
     

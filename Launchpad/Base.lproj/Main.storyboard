@@ -192,6 +192,7 @@
                                             <outlet property="temperatureLabel" destination="fXy-s9-dZc" id="XUQ-80-1iG"/>
                                             <outlet property="timeLabel" destination="H2A-eo-Wxt" id="HGq-J0-fn1"/>
                                             <outlet property="timeZoneLabel" destination="qB7-IP-C8p" id="u6n-Dr-7Cj"/>
+                                            <segue destination="WbU-dH-bhg" kind="presentation" identifier="ShowDetail" id="46X-8f-HcF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -270,8 +271,8 @@
         <scene sceneID="flq-ch-1Ah">
             <objects>
                 <viewController id="WbU-dH-bhg" customClass="LaunchDetailViewController" customModule="Launchpad" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="i6d-R4-NgR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleToFill" id="i6d-R4-NgR" customClass="LaunchDe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Starlink 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg1-uq-NHU">
@@ -461,21 +462,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LC 391" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-v8-RGx">
-                                        <rect key="frame" x="8" y="34" width="63" height="23"/>
+                                        <rect key="frame" x="8" y="34" width="162" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CCSFS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGM-F6-bGu">
-                                        <rect key="frame" x="8" y="65" width="49" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longer location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9J-YL-Gg9">
-                                        <rect key="frame" x="7" y="86" width="106" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CCSFS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGM-F6-bGu">
+                                        <rect key="frame" x="8" y="65" width="162" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -562,7 +556,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zya-VL-MaL">
-                                <rect key="frame" x="20" y="618" width="374" height="244"/>
+                                <rect key="frame" x="20" y="618" width="374" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GY-Qb-fMO">
@@ -573,7 +567,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEj-0m-EJW">
-                                        <rect key="frame" x="8" y="34" width="358" height="202"/>
+                                        <rect key="frame" x="8" y="34" width="358" height="156"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -589,22 +583,30 @@
                     <connections>
                         <outlet property="attemptLabel" destination="9ZR-h5-cUQ" id="mUY-Kd-Fzz"/>
                         <outlet property="blockLabel" destination="BYL-yn-V1F" id="YbP-5u-wfg"/>
+                        <outlet property="countdownUIView" destination="neQ-nD-CI0" id="bMh-Ri-PeD"/>
                         <outlet property="countryLabel" destination="ohG-Gm-73j" id="De6-mE-XED"/>
                         <outlet property="customerLabel" destination="bnr-8Q-XM0" id="aiX-VW-sa0"/>
                         <outlet property="detailCountDownLabel" destination="nMh-R9-P16" id="5mL-qW-jYZ"/>
                         <outlet property="detailsLabel" destination="CEj-0m-EJW" id="TMw-ZU-2qL"/>
-                        <outlet property="flightNumberLabel" destination="sRc-rZ-76x" id="bHA-vO-pq9"/>
+                        <outlet property="detailsUIView" destination="zya-VL-MaL" id="KsT-Ym-LZ6"/>
+                        <outlet property="flightNumberDetailLabel" destination="sRc-rZ-76x" id="LGH-QN-JwR"/>
+                        <outlet property="flightNumberLabel" destination="t4Q-V7-yon" id="ILf-RZ-1Gw"/>
+                        <outlet property="landingUIView" destination="rhl-Vm-hXR" id="kS5-Lw-yG3"/>
                         <outlet property="landingVehicleLabel" destination="miC-lk-gXJ" id="w0P-qt-cbd"/>
+                        <outlet property="launchUIView" destination="1cZ-Ob-3Bo" id="lx8-hy-lTH"/>
                         <outlet property="locationLabel" destination="wGM-F6-bGu" id="9dX-Vc-bB9"/>
                         <outlet property="massLabel" destination="JHC-3i-7sW" id="0ji-AZ-snq"/>
+                        <outlet property="nameLabel" destination="Jg1-uq-NHU" id="m4W-AZ-ynI"/>
                         <outlet property="orbitLabel" destination="nwQ-aR-gMs" id="lbw-Qj-FRL"/>
                         <outlet property="padLabel" destination="PBj-v8-RGx" id="AsA-KJ-O1i"/>
                         <outlet property="payloadLabel" destination="qYF-Bt-Xaa" id="iRc-mF-Tdg"/>
+                        <outlet property="payloadUIView" destination="hAJ-D8-nwD" id="qrQ-Xy-eC6"/>
                         <outlet property="reusedLabel" destination="wYb-oN-KUH" id="3oE-6T-WlZ"/>
                         <outlet property="serialLabel" destination="KLN-lC-lbh" id="Ef7-gq-pfr"/>
                         <outlet property="successLabel" destination="hIX-GR-n0B" id="nZz-eX-n3g"/>
                         <outlet property="typeLabel" destination="waa-al-xB0" id="WhA-bw-yG0"/>
                         <outlet property="vehicleLabel" destination="kO0-lK-bBj" id="gV8-0y-wq1"/>
+                        <outlet property="vehicleUIView" destination="1Zs-GI-vwu" id="C2t-MV-zxd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pn5-Rw-6nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

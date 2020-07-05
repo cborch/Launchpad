@@ -34,6 +34,16 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            if let destination = segue.destination as? LaunchDetailViewController{
+                destination.launch = launches.launchArray[tableView.indexPathForSelectedRow!.row]
+            }
+        } else {
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        }
+    }
+    
     func runTimer() {
          timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
