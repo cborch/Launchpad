@@ -3,19 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A382BFA88594E6EDF4310924 /* Pods_Launchpad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE6EFD63B22F69921A3EF9E /* Pods_Launchpad.framework */; };
+		C5508E3824B14578009E57E0 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3724B14578009E57E0 /* Launch.swift */; };
+		C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3924B168F2009E57E0 /* Payload.swift */; };
 		C563B89424B126CB009293A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B89324B126CB009293A4 /* AppDelegate.swift */; };
 		C563B89624B126CB009293A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B89524B126CB009293A4 /* SceneDelegate.swift */; };
 		C563B89824B126CB009293A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B89724B126CB009293A4 /* ViewController.swift */; };
 		C563B89B24B126CB009293A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563B89924B126CB009293A4 /* Main.storyboard */; };
 		C563B89D24B126CD009293A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C563B89C24B126CD009293A4 /* Assets.xcassets */; };
 		C563B8A024B126CD009293A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563B89E24B126CD009293A4 /* LaunchScreen.storyboard */; };
+		C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B8AB24B13148009293A4 /* LaunchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		603B0F1BAAED97AE304E11F6 /* Pods-Launchpad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launchpad.release.xcconfig"; path = "Target Support Files/Pods-Launchpad/Pods-Launchpad.release.xcconfig"; sourceTree = "<group>"; };
+		8B8CA8781EF0BA57E7175CDD /* Pods-Launchpad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launchpad.debug.xcconfig"; path = "Target Support Files/Pods-Launchpad/Pods-Launchpad.debug.xcconfig"; sourceTree = "<group>"; };
+		AEE6EFD63B22F69921A3EF9E /* Pods_Launchpad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Launchpad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5508E3724B14578009E57E0 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		C5508E3924B168F2009E57E0 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		C563B89024B126CB009293A4 /* Launchpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Launchpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C563B89324B126CB009293A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C563B89524B126CB009293A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,7 @@
 		C563B89C24B126CD009293A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C563B89F24B126CD009293A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C563B8A124B126CD009293A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C563B8AB24B13148009293A4 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A382BFA88594E6EDF4310924 /* Pods_Launchpad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68FCD6A9326C2D60E92BD1A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B8CA8781EF0BA57E7175CDD /* Pods-Launchpad.debug.xcconfig */,
+				603B0F1BAAED97AE304E11F6 /* Pods-Launchpad.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6B76E73299AF5FBA667EA05F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEE6EFD63B22F69921A3EF9E /* Pods_Launchpad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C563B88724B126CB009293A4 = {
 			isa = PBXGroup;
 			children = (
 				C563B89224B126CB009293A4 /* Launchpad */,
 				C563B89124B126CB009293A4 /* Products */,
+				68FCD6A9326C2D60E92BD1A3 /* Pods */,
+				6B76E73299AF5FBA667EA05F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +89,9 @@
 				C563B89324B126CB009293A4 /* AppDelegate.swift */,
 				C563B89524B126CB009293A4 /* SceneDelegate.swift */,
 				C563B89724B126CB009293A4 /* ViewController.swift */,
+				C563B8AB24B13148009293A4 /* LaunchCell.swift */,
+				C5508E3724B14578009E57E0 /* Launch.swift */,
+				C5508E3924B168F2009E57E0 /* Payload.swift */,
 				C563B89924B126CB009293A4 /* Main.storyboard */,
 				C563B89C24B126CD009293A4 /* Assets.xcassets */,
 				C563B89E24B126CD009293A4 /* LaunchScreen.storyboard */,
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C563B8A424B126CD009293A4 /* Build configuration list for PBXNativeTarget "Launchpad" */;
 			buildPhases = (
+				E31C979CAC061661BA1472FD /* [CP] Check Pods Manifest.lock */,
 				C563B88C24B126CB009293A4 /* Sources */,
 				C563B88D24B126CB009293A4 /* Frameworks */,
 				C563B88E24B126CB009293A4 /* Resources */,
+				F90F7AF035D589C36DFD6C92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +168,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E31C979CAC061661BA1472FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Launchpad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90F7AF035D589C36DFD6C92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Launchpad/Pods-Launchpad-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Launchpad/Pods-Launchpad-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Launchpad/Pods-Launchpad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C563B88C24B126CB009293A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */,
 				C563B89824B126CB009293A4 /* ViewController.swift in Sources */,
 				C563B89424B126CB009293A4 /* AppDelegate.swift in Sources */,
+				C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */,
+				C5508E3824B14578009E57E0 /* Launch.swift in Sources */,
 				C563B89624B126CB009293A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +362,7 @@
 		};
 		C563B8A524B126CD009293A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B8CA8781EF0BA57E7175CDD /* Pods-Launchpad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,12 +375,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Borchetta.Launchpad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C563B8A624B126CD009293A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 603B0F1BAAED97AE304E11F6 /* Pods-Launchpad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Borchetta.Launchpad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
