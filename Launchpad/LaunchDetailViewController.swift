@@ -64,6 +64,26 @@ class LaunchDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowLandingDetail" {
+            if let destination = segue.destination as? LandingDetailViewController{
+                destination.landingPadID = launch.landingVehicle
+            }
+        } else if segue.identifier == "ShowLaunchDetail" {
+            if let destination = segue.destination as? LaunchPadDetailViewController {
+                destination.launchPadID = launch.siteID
+            }
+        }
+        
+         else {
+            //tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        }
+    }
+    
+ 
+    
+    
+    
     func runTimer() {
          timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }

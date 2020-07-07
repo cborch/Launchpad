@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A382BFA88594E6EDF4310924 /* Pods_Launchpad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE6EFD63B22F69921A3EF9E /* Pods_Launchpad.framework */; };
+		C50D4DDA24B3D7090031F3C6 /* LandingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DD924B3D7090031F3C6 /* LandingDetailViewController.swift */; };
+		C50D4DDC24B3DD720031F3C6 /* LandingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */; };
+		C50D4DDE24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */; };
+		C50D4DE024B4010C0031F3C6 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */; };
 		C5508E3824B14578009E57E0 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3724B14578009E57E0 /* Launch.swift */; };
 		C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3924B168F2009E57E0 /* Payload.swift */; };
 		C5508E3C24B1F59E009E57E0 /* Launches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3B24B1F59E009E57E0 /* Launches.swift */; };
@@ -26,6 +30,10 @@
 		603B0F1BAAED97AE304E11F6 /* Pods-Launchpad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launchpad.release.xcconfig"; path = "Target Support Files/Pods-Launchpad/Pods-Launchpad.release.xcconfig"; sourceTree = "<group>"; };
 		8B8CA8781EF0BA57E7175CDD /* Pods-Launchpad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launchpad.debug.xcconfig"; path = "Target Support Files/Pods-Launchpad/Pods-Launchpad.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE6EFD63B22F69921A3EF9E /* Pods_Launchpad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Launchpad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C50D4DD924B3D7090031F3C6 /* LandingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingDetailViewController.swift; sourceTree = "<group>"; };
+		C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPad.swift; sourceTree = "<group>"; };
+		C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadDetailViewController.swift; sourceTree = "<group>"; };
+		C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
 		C5508E3724B14578009E57E0 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		C5508E3924B168F2009E57E0 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		C5508E3B24B1F59E009E57E0 /* Launches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launches.swift; sourceTree = "<group>"; };
@@ -100,8 +108,12 @@
 				C5508E3724B14578009E57E0 /* Launch.swift */,
 				C5508E3924B168F2009E57E0 /* Payload.swift */,
 				C5508E3D24B22053009E57E0 /* LaunchDetailViewController.swift */,
-				C563B89924B126CB009293A4 /* Main.storyboard */,
+				C50D4DD924B3D7090031F3C6 /* LandingDetailViewController.swift */,
+				C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */,
+				C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */,
+				C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */,
 				C5508E3F24B26FDE009E57E0 /* VehicleDetailViewController.swift */,
+				C563B89924B126CB009293A4 /* Main.storyboard */,
 				C563B89C24B126CD009293A4 /* Assets.xcassets */,
 				C563B89E24B126CD009293A4 /* LaunchScreen.storyboard */,
 				C563B8A124B126CD009293A4 /* Info.plist */,
@@ -224,8 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50D4DDE24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift in Sources */,
 				C5508E4024B26FDE009E57E0 /* VehicleDetailViewController.swift in Sources */,
 				C5508E3E24B22053009E57E0 /* LaunchDetailViewController.swift in Sources */,
+				C50D4DDC24B3DD720031F3C6 /* LandingPad.swift in Sources */,
+				C50D4DE024B4010C0031F3C6 /* Launchpad.swift in Sources */,
 				C5508E3C24B1F59E009E57E0 /* Launches.swift in Sources */,
 				C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */,
 				C563B89824B126CB009293A4 /* ViewController.swift in Sources */,
@@ -233,6 +248,7 @@
 				C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */,
 				C5508E3824B14578009E57E0 /* Launch.swift in Sources */,
 				C563B89624B126CB009293A4 /* SceneDelegate.swift in Sources */,
+				C50D4DDA24B3D7090031F3C6 /* LandingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

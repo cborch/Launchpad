@@ -9,6 +9,7 @@
 import UIKit
 
 class VehicleDetailViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
