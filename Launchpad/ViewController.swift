@@ -88,7 +88,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchCell", for: indexPath) as! LaunchCell
         
-        cell.setCell(flightNumber: "#\(launches.launchArray[indexPath.row].flightNumber)", name: "\(launches.launchArray[indexPath.row].missionName)", description: "\(launches.launchArray[indexPath.row].missionDetails)", date: "\(launches.launchArray[indexPath.row].launchDateLocal)", year: "\(launches.launchArray[indexPath.row].launchYear)", time: "\(launches.launchArray[indexPath.row].launchTime)", timeZone: "\(launches.launchArray[indexPath.row].timeZone)", pad: "\(launches.launchArray[indexPath.row].padName)", padLocation: "\(launches.launchArray[indexPath.row].siteName)", temperature: "Plaecholder", conditions: "Placeholder")
+        cell.setCell(flightNumber: "#\(launches.launchArray[indexPath.row].flightNumber)", name: "\(launches.launchArray[indexPath.row].missionName)", description: "\(launches.launchArray[indexPath.row].missionDetails)", date: "\(launches.launchArray[indexPath.row].launchDateLocal)", year: "\(launches.launchArray[indexPath.row].launchYear)", time: "\(launches.launchArray[indexPath.row].launchTime)", timeZone: "\(launches.launchArray[indexPath.row].timeZone)", pad: "\(launches.launchArray[indexPath.row].padName)", padLocation: "\(launches.launchArray[indexPath.row].siteName)", temperature: "Plaecholder", conditions: "Placeholder", patchURL: launches.launchArray[indexPath.row].missionPatchLink)
         cell.configureUIViews()
         
         return cell

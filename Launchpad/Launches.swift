@@ -81,6 +81,7 @@ class Launches {
                         let landingVehicle = json[index]["rocket"]["first_stage"]["cores"][0]["landing_vehicle"].stringValue
                         
                         let siteID = json[index]["launch_site"]["site_id"].stringValue
+                        let missionPatchLink = json[index]["links"]["mission_patch_small"].stringValue
                         
                         let siteName = json[index]["launch_site"]["site_name"].stringValue
                         
@@ -99,7 +100,7 @@ class Launches {
                         
                         let payloadCount = json[index]["rocket"]["second_stage"]["payloads"].count
                         
-                        var launch = Launch(flightNumber: flightNumber, missionName: missionName, launchYear: stringLaunchYear, vehicleBlock: vehicleBlock, launchDateUnix: launchDateUnix, launchDateLocal: stringLaunchDate, rocketType: rocketType, serial: serial, previousFlights: previousFlights, reused: reused, landingIntent: landingIntent, landingType: landingType, landingVehicle: landingVehicle, payloadArray: [], siteName: String(siteAbbreviation), siteNameLong: siteNameLong, missionDetails: missionDetails, link: link, upcoming: upcoming, launchTime: stringLaunchTime, timeZone: stringTimeZone, padName: String(padAbbreviation), siteID: siteID)
+                        var launch = Launch(flightNumber: flightNumber, missionName: missionName, launchYear: stringLaunchYear, vehicleBlock: vehicleBlock, launchDateUnix: launchDateUnix, launchDateLocal: stringLaunchDate, rocketType: rocketType, serial: serial, previousFlights: previousFlights, reused: reused, landingIntent: landingIntent, landingType: landingType, landingVehicle: landingVehicle, payloadArray: [], siteName: String(siteAbbreviation), siteNameLong: siteNameLong, missionDetails: missionDetails, link: link, upcoming: upcoming, launchTime: stringLaunchTime, timeZone: stringTimeZone, padName: String(padAbbreviation), siteID: siteID, missionPatchLink: missionPatchLink)
                         
                         
                         for j in 0..<payloadCount {

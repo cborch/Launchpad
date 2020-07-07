@@ -27,6 +27,7 @@ class Launch {
     var timeZone = "EST"
     var padName = "KSC"
     var siteID = "ccas_lv"
+    var missionPatchLink = "https"
     
     
     var siteName = "VAB"
@@ -35,7 +36,7 @@ class Launch {
     var link = "http"
     var upcoming = false
     
-    init(flightNumber: Int, missionName: String, launchYear: String, vehicleBlock: Int, launchDateUnix: Double, launchDateLocal: String, rocketType: String, serial: String, previousFlights: Int, reused: Bool, landingIntent: Bool, landingType: String, landingVehicle: String, payloadArray: [Payload], siteName: String, siteNameLong: String, missionDetails: String, link: String, upcoming: Bool, launchTime: String, timeZone: String, padName: String, siteID: String) {
+    init(flightNumber: Int, missionName: String, launchYear: String, vehicleBlock: Int, launchDateUnix: Double, launchDateLocal: String, rocketType: String, serial: String, previousFlights: Int, reused: Bool, landingIntent: Bool, landingType: String, landingVehicle: String, payloadArray: [Payload], siteName: String, siteNameLong: String, missionDetails: String, link: String, upcoming: Bool, launchTime: String, timeZone: String, padName: String, siteID: String, missionPatchLink: String) {
         self.flightNumber = flightNumber
         self.missionName = missionName
         self.launchYear = launchYear
@@ -59,6 +60,7 @@ class Launch {
         self.timeZone = timeZone
         self.padName = padName
         self.siteID = siteID
+        self.missionPatchLink = missionPatchLink
     }
     
     

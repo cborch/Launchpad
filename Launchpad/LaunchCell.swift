@@ -7,6 +7,7 @@
 //
 //
 import UIKit
+import SDWebImage
 
 class LaunchCell: UITableViewCell {
 
@@ -30,8 +31,10 @@ class LaunchCell: UITableViewCell {
     @IBOutlet weak var smallUIView3: UIView!
     @IBOutlet weak var smallUIView4: UIView!
     
+    let placeHolderImage = UIImage(named: "placeholder")
     
-    func setCell(flightNumber: String, name: String, description: String, date: String, year: String, time: String, timeZone: String, pad: String, padLocation: String, temperature: String, conditions: String) {
+    
+    func setCell(flightNumber: String, name: String, description: String, date: String, year: String, time: String, timeZone: String, pad: String, padLocation: String, temperature: String, conditions: String, patchURL: String) {
         flightNumberLabel.text = flightNumber
         nameLabel.text = name
         descriptionLabel.text = description
@@ -43,8 +46,30 @@ class LaunchCell: UITableViewCell {
         padLocationLabel.text = padLocation
         temperatureLabel.text = temperature
         conditionsLabel.text = conditions
+  
+        let remoteImageURL = URL(string: patchURL)
+        missionImageView.sd_setImage(with: remoteImageURL, placeholderImage: placeHolderImage, options: SDWebImageOptions.highPriority, context: nil, progress: nil) { downloadedImage, downloadException, cacheType, downloadURL in
+            
+            if let downloadException = downloadException {
+                print("Problem downloading the image \(downloadException.localizedDescription)")
+            } else {
+                print("Success")
+            }
+            
+        }
         
-        // missionImageView
+        
+//        if let url = URL(string: patchURL) {
+//
+//            do {
+//                let data = try Data(contentsOf: url)
+//                missionImageView.image = UIImage(data: data)
+//
+//            } catch let err {
+//                print("Error: \(err.localizedDescription)")
+//            }
+//        }
+
         
 
     }

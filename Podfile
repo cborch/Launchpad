@@ -8,6 +8,7 @@ target 'Launchpad' do
   # Pods for Launchpad
     pod 'SwiftyJSON', '~> 4.0'
     pod 'Alamofire', '~> 4.9'
+	pod 'SDWebImage', '~> 5.0'
 
 end
 
