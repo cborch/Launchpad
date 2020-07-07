@@ -13,13 +13,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var countDownLabel: UILabel!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    
+    
     var timer = Timer()
     var isTimerRunning = false
     var timeToLaunch = 86400.0
     let currentUnixTime = NSDate().timeIntervalSince1970
     
 
-    var launches = Launches()
+    var launchesFull = Launches()
+    var launchesSelect = Launches()
 
 
     override func viewDidLoad() {
@@ -31,13 +36,15 @@ class ViewController: UIViewController {
         loadLaunches()
         print(timeToLaunch)
         runTimer()
+
+
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             if let destination = segue.destination as? LaunchDetailViewController{
-                destination.launch = launches.launchArray[tableView.indexPathForSelectedRow!.row]
+                destination.launch = launchesFull.launchArray[tableView.indexPathForSelectedRow!.row]
             }
         } else {
             tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
@@ -62,17 +69,60 @@ class ViewController: UIViewController {
     }
     
     func loadLaunches() {
-        launches.getLaunches() {
+        launchesFull.getLaunches() {
             print("Done")
             self.tableView.reloadData()
-            print(self.launches.launchArray)
-            self.timeToLaunch = self.launches.launchArray[0].launchDateUnix - self.currentUnixTime
+            print(self.launchesFull.launchArray)
+            self.timeToLaunch = self.launchesFull.launchArray[0].launchDateUnix - self.currentUnixTime
+            self.segmentControllChanged(nil)
         }
         
         
     }
     
 
+
+    @IBAction func segmentControllChanged(_ sender: UISegmentedControl?) {
+        var startIndex = 0
+        var endIndex = 0
+        
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            launchesSelect.launchArray = []
+            for i in 0..<launchesFull.launchArray.count {
+                if launchesFull.launchArray[i].upcoming == true {
+                    startIndex = i
+                    endIndex = i + 1
+                    break
+                }
+            }
+            launchesSelect.launchArray = launchesFull.launchArray
+            launchesSelect.launchArray = Array(launchesSelect.launchArray[startIndex..<endIndex])
+            tableView.reloadData()
+        case 1:
+            launchesSelect.launchArray = []
+            //let startIndex = 0
+            for i in 0..<launchesFull.launchArray.count {
+                if launchesFull.launchArray[i].upcoming == true {
+                    endIndex = i
+                    break
+                }
+            }
+            
+            launchesSelect.launchArray = Array(launchesFull.launchArray[startIndex..<endIndex])
+            launchesSelect.launchArray = launchesSelect.launchArray.reversed()
+            tableView.reloadData()
+        case 2:
+            launchesSelect.launchArray = []
+            //let startIndex = 0
+            let endIndex = launchesFull.launchArray.count - 1
+            launchesSelect.launchArray = Array(launchesFull.launchArray[startIndex..<endIndex])
+            tableView.reloadData()
+            
+        default:
+            print("nope")
+        }
+    }
     
     
 
@@ -82,13 +132,18 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launches.launchArray.count
+        return launchesSelect.launchArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchCell", for: indexPath) as! LaunchCell
         
-        cell.setCell(flightNumber: "#\(launches.launchArray[indexPath.row].flightNumber)", name: "\(launches.launchArray[indexPath.row].missionName)", description: "\(launches.launchArray[indexPath.row].missionDetails)", date: "\(launches.launchArray[indexPath.row].launchDateLocal)", year: "\(launches.launchArray[indexPath.row].launchYear)", time: "\(launches.launchArray[indexPath.row].launchTime)", timeZone: "\(launches.launchArray[indexPath.row].timeZone)", pad: "\(launches.launchArray[indexPath.row].padName)", padLocation: "\(launches.launchArray[indexPath.row].siteName)", temperature: "Plaecholder", conditions: "Placeholder", patchURL: launches.launchArray[indexPath.row].missionPatchLink)
+        // Check for the segment control index
+        // Select the appropriate launches.launchArray indexes
+        //print(segmentControl.selectedSegmentIndex)
+        
+        
+        cell.setCell(flightNumber: "#\(launchesSelect.launchArray[indexPath.row].flightNumber)", name: "\(launchesSelect.launchArray[indexPath.row].missionName)", description: "\(launchesSelect.launchArray[indexPath.row].missionDetails)", date: "\(launchesSelect.launchArray[indexPath.row].launchDateLocal)", year: "\(launchesSelect.launchArray[indexPath.row].launchYear)", time: "\(launchesSelect.launchArray[indexPath.row].launchTime)", timeZone: "\(launchesSelect.launchArray[indexPath.row].timeZone)", pad: "\(launchesSelect.launchArray[indexPath.row].padName)", padLocation: "\(launchesSelect.launchArray[indexPath.row].siteName)", temperature: "Plaecholder", conditions: "Placeholder", patchURL: launchesSelect.launchArray[indexPath.row].missionPatchLink)
         cell.configureUIViews()
         
         return cell

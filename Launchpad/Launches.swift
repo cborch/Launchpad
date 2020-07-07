@@ -35,7 +35,7 @@ class Launches {
                     if upcoming {
                         upcomingIndex = index
                     }
-                    if index >= upcomingIndex {
+                    //if index >= upcomingIndex {
                         let flightNumber = json[index]["flight_number"].intValue
                         let missionName = json[index]["mission_name"].stringValue
                         
@@ -114,7 +114,7 @@ class Launches {
                             var payload = Payload(name: payloadName, customer: customer, nationality: nationality, manufacturer: manufacturer, type: type, mass: mass, orbit: orbit)
                             
                             launch.payloadArray.append(payload)
-                        }
+                        //}
                         
                         
                         self.launchArray.append(launch)
