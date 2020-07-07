@@ -12,6 +12,7 @@
 		C50D4DDC24B3DD720031F3C6 /* LandingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */; };
 		C50D4DDE24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */; };
 		C50D4DE024B4010C0031F3C6 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */; };
+		C5360A3124B4EDDB00385280 /* PayloadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5360A3024B4EDDB00385280 /* PayloadDetailViewController.swift */; };
 		C5508E3824B14578009E57E0 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3724B14578009E57E0 /* Launch.swift */; };
 		C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3924B168F2009E57E0 /* Payload.swift */; };
 		C5508E3C24B1F59E009E57E0 /* Launches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5508E3B24B1F59E009E57E0 /* Launches.swift */; };
@@ -34,6 +35,7 @@
 		C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPad.swift; sourceTree = "<group>"; };
 		C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadDetailViewController.swift; sourceTree = "<group>"; };
 		C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
+		C5360A3024B4EDDB00385280 /* PayloadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadDetailViewController.swift; sourceTree = "<group>"; };
 		C5508E3724B14578009E57E0 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		C5508E3924B168F2009E57E0 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		C5508E3B24B1F59E009E57E0 /* Launches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launches.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				C5508E3D24B22053009E57E0 /* LaunchDetailViewController.swift */,
 				C50D4DD924B3D7090031F3C6 /* LandingDetailViewController.swift */,
 				C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */,
+				C5360A3024B4EDDB00385280 /* PayloadDetailViewController.swift */,
 				C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */,
 				C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */,
 				C5508E3F24B26FDE009E57E0 /* VehicleDetailViewController.swift */,
@@ -246,6 +249,7 @@
 				C563B89824B126CB009293A4 /* ViewController.swift in Sources */,
 				C563B89424B126CB009293A4 /* AppDelegate.swift in Sources */,
 				C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */,
+				C5360A3124B4EDDB00385280 /* PayloadDetailViewController.swift in Sources */,
 				C5508E3824B14578009E57E0 /* Launch.swift in Sources */,
 				C563B89624B126CB009293A4 /* SceneDelegate.swift in Sources */,
 				C50D4DDA24B3D7090031F3C6 /* LandingDetailViewController.swift in Sources */,

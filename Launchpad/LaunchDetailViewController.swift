@@ -73,6 +73,10 @@ class LaunchDetailViewController: UIViewController {
             if let destination = segue.destination as? LaunchPadDetailViewController {
                 destination.launchPadID = launch.siteID
             }
+        } else if segue.identifier == "ShowPayloadDetail" {
+            if let destination = segue.destination as? PayloadDetailViewController {
+                destination.payloads = launch.payloadArray
+            }
         }
         
          else {

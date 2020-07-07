@@ -647,7 +647,7 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="R6S-5t-uFR" userLabel="Payload Tap Gesture Recognizer">
                     <connections>
-                        <segue destination="xAU-L6-Aly" kind="presentation" id="zl7-7W-iKR"/>
+                        <segue destination="xAU-L6-Aly" kind="presentation" identifier="ShowPayloadDetail" id="zl7-7W-iKR"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1490,10 +1490,10 @@
             </objects>
             <point key="canvasLocation" x="4331.884057971015" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Payload Detail View Controller-->
         <scene sceneID="CmD-QG-fT1">
             <objects>
-                <viewController id="xAU-L6-Aly" sceneMemberID="viewController">
+                <viewController id="xAU-L6-Aly" customClass="PayloadDetailViewController" customModule="Launchpad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sAt-bY-GCY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1902,6 +1902,37 @@
                         <viewLayoutGuide key="safeArea" id="anB-Qy-RQA"/>
                     </view>
                     <size key="freeformSize" width="414" height="2000"/>
+                    <connections>
+                        <outlet property="apoapsis1Label" destination="Wrq-Ak-iMh" id="fVS-Dz-wfj"/>
+                        <outlet property="apoapsis2Label" destination="qfR-Ws-OCZ" id="04O-Wf-AY0"/>
+                        <outlet property="country1Label" destination="vsg-2O-rRZ" id="dPq-0s-J9f"/>
+                        <outlet property="country2Label" destination="NlQ-gQ-Y6a" id="Ks2-KK-GfJ"/>
+                        <outlet property="customer1Label" destination="2bc-T8-U9d" id="uCh-Rr-Bdj"/>
+                        <outlet property="customer2Label" destination="4pM-iN-VvU" id="5tx-gt-C9h"/>
+                        <outlet property="eccentricity1Label" destination="30g-c7-24H" id="iEU-xT-3Rf"/>
+                        <outlet property="eccentricity2Label" destination="pQn-7t-wGI" id="Gfv-Xz-t0H"/>
+                        <outlet property="inclination1Label" destination="zKy-AF-27m" id="Y7v-Z3-Oq8"/>
+                        <outlet property="inclination2Label" destination="IA2-sO-dhh" id="Az0-qb-pIH"/>
+                        <outlet property="lifespan1Label" destination="m5M-r8-J7U" id="TYb-Z7-gvM"/>
+                        <outlet property="lifespan2Label" destination="Z1H-TZ-6qS" id="5tQ-jb-n4R"/>
+                        <outlet property="manufacturer1Label" destination="SIE-2A-RY3" id="qKw-uX-vh7"/>
+                        <outlet property="manufacturer2Label" destination="M8e-ic-3Ro" id="Q7T-3P-doF"/>
+                        <outlet property="mass1Label" destination="6ed-09-Lzv" id="XWF-fH-SXb"/>
+                        <outlet property="mass2Label" destination="Vp7-Rl-sX8" id="6uc-sa-Vc1"/>
+                        <outlet property="nameLabel" destination="E2v-Hr-eE3" id="nXa-uT-JXJ"/>
+                        <outlet property="orbit1Label" destination="nd4-47-o5j" id="QXE-Y7-wi9"/>
+                        <outlet property="orbit2Label" destination="6Xu-e3-Uev" id="3Na-e2-vlE"/>
+                        <outlet property="payload1ImageView" destination="tlU-BB-HIe" id="dWU-9O-Tag"/>
+                        <outlet property="payload1Label" destination="Cfh-bP-KoB" id="7JL-ii-p6U"/>
+                        <outlet property="payload2ImageView" destination="uLh-GS-qzW" id="0TC-ve-Ri2"/>
+                        <outlet property="payload2Label" destination="G36-6S-Zmd" id="9I9-ve-siS"/>
+                        <outlet property="periapsis1Label" destination="OVg-RW-0fE" id="P8J-sG-E4q"/>
+                        <outlet property="periapsis2Label" destination="a6l-Z8-RR6" id="i2P-Kd-aaa"/>
+                        <outlet property="period1Label" destination="HA5-Gm-aJz" id="Ywb-RD-U6i"/>
+                        <outlet property="period2Label" destination="Z1u-kk-NCS" id="KTT-Kw-0xy"/>
+                        <outlet property="type1Label" destination="cpT-QV-kle" id="OMF-hO-DIv"/>
+                        <outlet property="type2Label" destination="pXX-Ac-ciT" id="2Sc-Oo-pK2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tM-AN-bX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
