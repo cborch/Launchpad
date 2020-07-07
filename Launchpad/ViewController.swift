@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var isTimerRunning = false
     var timeToLaunch = 86400.0
     let currentUnixTime = NSDate().timeIntervalSince1970
+    var upcomingLaunchFlightNumber = 0
     
 
     var launchesFull = Launches()
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             if let destination = segue.destination as? LaunchDetailViewController{
-                destination.launch = launchesFull.launchArray[tableView.indexPathForSelectedRow!.row]
+                destination.launch = launchesSelect.launchArray[tableView.indexPathForSelectedRow!.row]
             }
         } else {
             tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
