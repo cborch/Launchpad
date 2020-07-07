@@ -28,6 +28,7 @@ class LaunchPadDetailViewController: UIViewController {
     @IBOutlet weak var attemptsLabel: UILabel!
     @IBOutlet weak var successesLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     
     
@@ -74,11 +75,20 @@ class LaunchPadDetailViewController: UIViewController {
                         let wiki = json[index]["wikipedia"].stringValue
                         let desc = json[index]["details"].stringValue
                         
-                        let vehiclesLaunched: [String] = []
+                        var vehiclesLaunched: [String] = []
                         let vehicleCount = json[index]["vehicles_launched"].count
+                        
+                        for j in 0..<vehicleCount {
+                            let vehicle = json[index]["vehicles_launched"][j].stringValue
+                            vehiclesLaunched.append(vehicle)
+                            //vehiclesLaunched.append(contentsOf: json[index]["vehicles_launched"][j].stringValue)
+                            print(json[index]["vehicles_launched"][j].stringValue, "t")
+                        }
+                        
+                        
                         print(vehicleCount, "v count")
-                        print(json[index]["vehicles_launched"])
-                        print(json[index]["site_id"].stringValue)
+                        //print(json[index]["vehicles_launched"])
+                        //print(json[index]["site_id"].stringValue)
                         
                         self.launchPad.fullName = fullName
                         self.launchPad.status = status
@@ -91,6 +101,7 @@ class LaunchPadDetailViewController: UIViewController {
                         self.launchPad.success = success
                         self.launchPad.wiki = wiki
                         self.launchPad.description = desc
+                        self.launchPad.vehiclesLaunched = vehiclesLaunched
                         
                         
                     }
@@ -113,7 +124,36 @@ class LaunchPadDetailViewController: UIViewController {
         let percent = Int(launchPad.success / launchPad.attempts * 100)
         
         percentLabel.text = "\(percent)" + "%"
+        locationLabel.text = launchPad.location + "," + launchPad.region
         
+        switch launchPad.status {
+        case "active":
+            statusLabel.textColor = UIColor.green
+        case "retired":
+            statusLabel.textColor = UIColor.red
+        default:
+            statusLabel.textColor = UIColor.yellow
+        }
+        
+        descriptionLabel.text = launchPad.description
+        
+        if launchPad.vehiclesLaunched.contains("Falcon 1") {
+            falcon1Label.textColor = UIColor.green
+        } else {
+            falcon1Label.textColor = UIColor.red
+        }
+        if launchPad.vehiclesLaunched.contains("Falcon 9") {
+            falcon9Label.textColor = UIColor.green
+        } else {
+            falcon9Label.textColor = UIColor.red
+        }
+        if launchPad.vehiclesLaunched.contains("Falcon Heavy") {
+            falconHeavyLabel.textColor = UIColor.green
+        } else {
+            falconHeavyLabel.textColor = UIColor.red
+        }
+        print(launchPad.vehiclesLaunched.contains("Falcon 9"))
+        print(launchPad.vehiclesLaunched)
     }
 
 
