@@ -77,6 +77,10 @@ class LaunchDetailViewController: UIViewController {
             if let destination = segue.destination as? PayloadDetailViewController {
                 destination.payloads = launch.payloadArray
             }
+        } else if segue.identifier == "ShowVehicleDetail" {
+            if let destination = segue.destination as? VehicleDetailViewController {
+                destination.rocketID = launch.rocketID
+            }
         }
         
          else {

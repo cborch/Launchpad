@@ -26,6 +26,8 @@
 		C563B8A024B126CD009293A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563B89E24B126CD009293A4 /* LaunchScreen.storyboard */; };
 		C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B8AB24B13148009293A4 /* LaunchCell.swift */; };
 		C5D22E5124B6158800023B08 /* PayloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D22E5024B6158800023B08 /* PayloadTableViewCell.swift */; };
+		C5D22E5324B7767200023B08 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D22E5224B7767200023B08 /* Vehicle.swift */; };
+		C5D22E5524B77A9D00023B08 /* OrbitalCapability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D22E5424B77A9D00023B08 /* OrbitalCapability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		C563B8A124B126CD009293A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C563B8AB24B13148009293A4 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		C5D22E5024B6158800023B08 /* PayloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTableViewCell.swift; sourceTree = "<group>"; };
+		C5D22E5224B7767200023B08 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		C5D22E5424B77A9D00023B08 /* OrbitalCapability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitalCapability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				C563B8AB24B13148009293A4 /* LaunchCell.swift */,
 				C5508E3724B14578009E57E0 /* Launch.swift */,
 				C5508E3924B168F2009E57E0 /* Payload.swift */,
+				C5D22E5224B7767200023B08 /* Vehicle.swift */,
+				C5D22E5424B77A9D00023B08 /* OrbitalCapability.swift */,
 				C5508E3D24B22053009E57E0 /* LaunchDetailViewController.swift */,
 				C50D4DD924B3D7090031F3C6 /* LandingDetailViewController.swift */,
 				C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */,
@@ -250,6 +256,8 @@
 				C5508E3C24B1F59E009E57E0 /* Launches.swift in Sources */,
 				C5508E3A24B168F2009E57E0 /* Payload.swift in Sources */,
 				C563B89824B126CB009293A4 /* ViewController.swift in Sources */,
+				C5D22E5524B77A9D00023B08 /* OrbitalCapability.swift in Sources */,
+				C5D22E5324B7767200023B08 /* Vehicle.swift in Sources */,
 				C563B89424B126CB009293A4 /* AppDelegate.swift in Sources */,
 				C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */,
 				C5360A3124B4EDDB00385280 /* PayloadDetailViewController.swift in Sources */,
