@@ -120,8 +120,7 @@ class LaunchPadDetailViewController: UIViewController {
         attemptsLabel.text = "\(launchPad.attempts)"
         successesLabel.text = "\(launchPad.success)"
         
-        //let percent = round( Float(launchPad.success)/Float(launchPad.attempts) * 100)
-        let percent = Int(launchPad.success / launchPad.attempts * 100)
+        let percent = Int(round(Double(launchPad.success) / Double(launchPad.attempts) * 100.0))
         
         percentLabel.text = "\(percent)" + "%"
         locationLabel.text = launchPad.location + "," + launchPad.region

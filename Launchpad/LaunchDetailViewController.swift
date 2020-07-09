@@ -94,7 +94,12 @@ class LaunchDetailViewController: UIViewController {
     
     @objc func updateTimer() {
         timeToLaunch -= 1     //This will decrement(count down)the seconds.
-        detailCountDownLabel.text = timeString(time: TimeInterval(timeToLaunch)) //This will update the label.
+        if timeToLaunch <= 0 {
+            detailCountDownLabel.text = "Blast Off!"
+        } else {
+            detailCountDownLabel.text = timeString(time: TimeInterval(timeToLaunch)) //This will update the label.
+        }
+        
     }
     
     func timeString(time:TimeInterval) -> String {
@@ -122,10 +127,12 @@ class LaunchDetailViewController: UIViewController {
         
         
         if launch.payloadArray.count == 1 {
+            print(launch.payloadArray.count, "COUNT")
             customerLabel.text = launch.payloadArray[0].customer
             countryLabel.text = launch.payloadArray[0].nationality
             massLabel.text = "\(launch.payloadArray[0].mass)"
             orbitLabel.text = "\(launch.payloadArray[0].orbit)"
+            payloadLabel.text = launch.payloadArray[0].name
         } else {
             let payloadCount = launch.payloadArray.count
             var totalMass: Float = 0.0

@@ -12,37 +12,8 @@ import SwiftyJSON
 
 class PayloadDetailViewController: UIViewController {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var payload1ImageView: UIImageView!
-    @IBOutlet weak var payload1Label: UILabel!
-    @IBOutlet weak var customer1Label: UILabel!
-    @IBOutlet weak var country1Label: UILabel!
-    @IBOutlet weak var manufacturer1Label: UILabel!
-    @IBOutlet weak var type1Label: UILabel!
-    @IBOutlet weak var mass1Label: UILabel!
-    @IBOutlet weak var orbit1Label: UILabel!
-    @IBOutlet weak var periapsis1Label: UILabel!
-    @IBOutlet weak var apoapsis1Label: UILabel!
-    @IBOutlet weak var eccentricity1Label: UILabel!
-    @IBOutlet weak var inclination1Label: UILabel!
-    @IBOutlet weak var period1Label: UILabel!
-    @IBOutlet weak var lifespan1Label: UILabel!
-    
-    
-    @IBOutlet weak var payload2ImageView: UIImageView!
-    @IBOutlet weak var payload2Label: UILabel!
-    @IBOutlet weak var customer2Label: UILabel!
-    @IBOutlet weak var country2Label: UILabel!
-    @IBOutlet weak var manufacturer2Label: UILabel!
-    @IBOutlet weak var type2Label: UILabel!
-    @IBOutlet weak var mass2Label: UILabel!
-    @IBOutlet weak var orbit2Label: UILabel!
-    @IBOutlet weak var periapsis2Label: UILabel!
-    @IBOutlet weak var apoapsis2Label: UILabel!
-    @IBOutlet weak var eccentricity2Label: UILabel!
-    @IBOutlet weak var inclination2Label: UILabel!
-    @IBOutlet weak var period2Label: UILabel!
-    @IBOutlet weak var lifespan2Label: UILabel!
+
+    @IBOutlet weak var payloadTableView: UITableView!
     
     
     
@@ -53,9 +24,13 @@ class PayloadDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(payloads)
+        payloadTableView.delegate = self
+        payloadTableView.dataSource = self
         getPayloadData {
             print("got payload data")
             print(self.payloads)
+            self.payloadTableView.reloadData()
         }
         
 
@@ -65,16 +40,16 @@ class PayloadDetailViewController: UIViewController {
     func getPayloadData(completed: @escaping () -> ()) {
         
         Alamofire.request(apiURL).responseJSON { (response) in
-            print("*** JSON = \(response)")
+            //print("*** JSON = \(response)")
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 let numberOfPayloads = json.count
                 
-                for element in self.payloads {
+                for e in 0..<self.payloads.count {
                     for index in 0..<numberOfPayloads {
                         let ID = json[index]["payload_id"].stringValue
-                        if ID == element.name {
+                        if ID == self.payloads[e].name {
                             let name = json[index]["payload_id"].stringValue
                             let customer = json[index]["customers"][0].stringValue
                             let nationality = json[index]["nationality"].stringValue
@@ -92,8 +67,7 @@ class PayloadDetailViewController: UIViewController {
                             
                             let payload = Payload(name: name, customer: customer, nationality: nationality, manufacturer: manufacturer, type: type, mass: mass, orbit: orbit, referenceSystem: referenceSystem, regime: regime, periapsis: periapsis, apoapsis: apoapsis, inclination: inclination, period: period, eccentricty: eccentricty)
                             
-                            self.payloads.removeAll()
-                            self.payloads.append(payload)
+                            self.payloads[e] = payload
                             
                         }
                     }
@@ -110,5 +84,30 @@ class PayloadDetailViewController: UIViewController {
     func populateUI() {
         
     }
+
+}
+
+extension PayloadDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return payloads.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PayloadCell", for: indexPath) as! PayloadTableViewCell
+        
+        cell.setCell(payloadImage: "", orbit: payloads[indexPath.row].orbit, periapsis: payloads[indexPath.row].periapsis, apoapsis: payloads[indexPath.row].apoapsis, earthGlyph: "", regime: payloads[indexPath.row].regime, customer: payloads[indexPath.row].customer, nationality: payloads[indexPath.row].nationality, manufacturer: payloads[indexPath.row].manufacturer, type: payloads[indexPath.row].type, mass: payloads[indexPath.row].mass, inclination: payloads[indexPath.row].inclination, period: payloads[indexPath.row].period, eccentrcity: payloads[indexPath.row].eccentricty)
+        
+        
+
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 705
+    }
+    
+
+
 
 }

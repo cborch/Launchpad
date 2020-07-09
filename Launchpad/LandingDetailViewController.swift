@@ -22,6 +22,14 @@ class LandingDetailViewController: UIViewController {
     @IBOutlet weak var panelView2: UIView!
     @IBOutlet weak var panelView3: UIView!
     @IBOutlet weak var padNameLabel: UILabel!
+    @IBOutlet weak var attemptsLabel: UILabel!
+    @IBOutlet weak var successLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
+    
+    
+    
+    
+    
     
     var landingPadID = "LZ-45"
     let apiURL = "https://api.spacexdata.com/v3/landpads"
@@ -98,6 +106,27 @@ class LandingDetailViewController: UIViewController {
         default:
             statusLabel.textColor = UIColor.yellow
         }
+        
+        switch landingPad.fullName {
+        case "Landing Zone 1":
+            padImageView.image = UIImage(named: "landingZone1")
+        case "Landing Zone 2":
+            padImageView.image = UIImage(named: "landingZone2")
+        case "Landing Zone 4":
+            padImageView.image = UIImage(named: "landingZone4")
+        case "Of Course I Still Love You":
+            padImageView.image = UIImage(named: "ocisly")
+        case "Just Read The Instructions V1":
+            padImageView.image = UIImage(named: "jrti")
+        case "Just Read The Instructions":
+            padImageView.image = UIImage(named: "jrti")
+        default:
+            padImageView.image = UIImage(named: "placeholder")
+        }
+        
+        attemptsLabel.text = "\(landingPad.attemptedLandings)"
+        successLabel.text = "\(landingPad.succesfulLandings)"
+        percentLabel.text = "\(Int(round(Double(landingPad.succesfulLandings) / Double(landingPad.attemptedLandings) * 100.0)))%"
         
         descriptionLabel.text = landingPad.description
     }

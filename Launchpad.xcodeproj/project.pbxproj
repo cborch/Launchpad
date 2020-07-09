@@ -25,6 +25,7 @@
 		C563B89D24B126CD009293A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C563B89C24B126CD009293A4 /* Assets.xcassets */; };
 		C563B8A024B126CD009293A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C563B89E24B126CD009293A4 /* LaunchScreen.storyboard */; };
 		C563B8AC24B13148009293A4 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563B8AB24B13148009293A4 /* LaunchCell.swift */; };
+		C5D22E5124B6158800023B08 /* PayloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D22E5024B6158800023B08 /* PayloadTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C563B89F24B126CD009293A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C563B8A124B126CD009293A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C563B8AB24B13148009293A4 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
+		C5D22E5024B6158800023B08 /* PayloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				C50D4DD924B3D7090031F3C6 /* LandingDetailViewController.swift */,
 				C50D4DDD24B3FC8E0031F3C6 /* LaunchPadDetailViewController.swift */,
 				C5360A3024B4EDDB00385280 /* PayloadDetailViewController.swift */,
+				C5D22E5024B6158800023B08 /* PayloadTableViewCell.swift */,
 				C50D4DDB24B3DD720031F3C6 /* LandingPad.swift */,
 				C50D4DDF24B4010C0031F3C6 /* Launchpad.swift */,
 				C5508E3F24B26FDE009E57E0 /* VehicleDetailViewController.swift */,
@@ -252,6 +255,7 @@
 				C5360A3124B4EDDB00385280 /* PayloadDetailViewController.swift in Sources */,
 				C5508E3824B14578009E57E0 /* Launch.swift in Sources */,
 				C563B89624B126CB009293A4 /* SceneDelegate.swift in Sources */,
+				C5D22E5124B6158800023B08 /* PayloadTableViewCell.swift in Sources */,
 				C50D4DDA24B3D7090031F3C6 /* LandingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
