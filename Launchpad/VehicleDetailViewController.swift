@@ -63,7 +63,7 @@ class VehicleDetailViewController: UIViewController {
         super.viewDidLoad()
         getVehicleData {
             print("Got vehicle data")
-            
+            self.populateUI()
         }
 
 
@@ -73,15 +73,16 @@ class VehicleDetailViewController: UIViewController {
     func getVehicleData(completed: @escaping () -> ()) {
         
         Alamofire.request(apiURL).responseJSON { (response) in
-            print("*** JSON = \(response)")
+            //print("*** JSON = \(response)")
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 let numberOfVehicles = json.count
                 print(numberOfVehicles)
                 for index in 0..<numberOfVehicles {
-                    let ID = json[index]["id"].stringValue
+                    let ID = json[index]["rocket_id"].stringValue
                     if ID == self.rocketID {
+                        print("I got here")
                         // Populate landing pad struct
                         let active = json[index]["active"].stringValue
                         let cost = json[index]["cost_per_launch"].intValue
@@ -118,6 +119,7 @@ class VehicleDetailViewController: UIViewController {
                             
                             orbitalCapabilities.append(OrbitalCapability(id: id, name: name, kg: kg, lb: lb))
                         }
+                        
                         
                         var imageLinks: [String] = []
                         for i in 0..<json[index]["flickr_images"].count {
@@ -172,7 +174,49 @@ class VehicleDetailViewController: UIViewController {
     
     func populateUI() {
         
+        let imageURL = vehicle.imageLinks.randomElement()!
+        if let url = URL(string: imageURL) {
+        
+            do {
+                let data = try Data(contentsOf: url)
+                vehicleImageView.image = UIImage(data: data)
+        
+            } catch let err {
+                print("Error: \(err.localizedDescription)")
+            }
+        }
+        
+        thrustLabel.text = "\(vehicle.thrustSeaLevel)"
+        massLabel.text = "\(vehicle.mass)"
+        twrLabel.text = "\(vehicle.twr)"
+        heightLabel.text = "\(vehicle.height)"
+        enginesLabel.text = "\(vehicle.firstStageEngines)"
+        successLabel.text = "\(vehicle.successRate)"
+        
+        orbitLabel1.text = vehicle.orbitalCapabilities[0].name
+        orbitMassLabel1.text = "\(vehicle.orbitalCapabilities[0].lb)"
+        
+        engineNameLabel.text = vehicle.engineName + vehicle.engineVersion
+        engineLayoutLabel.text = vehicle.engineLayout
+        engineLossLabel.text = "\(vehicle.engineLossMax)"
+        prop1Label.text = vehicle.prop1
+        prop2Label.text = vehicle.prop2
+        stage1ThrustVacuum.text = "\(vehicle.thrustVacuum)"
+        stage1ThrustSeaLevel.text = "\(vehicle.firstStageThrustSeaLevel)"
+        
+        stage2EnginesLabel.text = "\(vehicle.secondStageEngines)"
+        stage2FuelLabel.text = "\(vehicle.secondStageFuel)"
+        stage2BurnTimeLabel.text = "\(vehicle.secondStageBurnTime)"
+        stage2ThrustSeaLevel.text = "\(vehicle.secondStageThrust)"
+        stage2ThrustVacuum.text = "\(vehicle.thrustVacuum)"
+        
+        costLabel.text = "\(vehicle.cost)"
+        heightSmallLabel.text = "\(vehicle.height)"
+        diameteLabel.text = "\(vehicle.diameter)"
+
     }
+    
+    
 
 
 
